@@ -14,7 +14,7 @@ rundoc run README-iptables.md
 # install.sh
 
 ### Install Packages and Tools
-```create-file:firewall.sh
+```create-file:firewall.sh:744
 #!/bin/bash
 set -euo pipefail
 sudo apt-get -y install iptables-persistent

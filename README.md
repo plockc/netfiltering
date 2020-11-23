@@ -29,11 +29,11 @@ rundoc run README-internet-firewall.md
 ```
 
 ### Install firewall and internet firewall
-```create-file:install.sh
+```create-file:install.sh:744
 #!/bin/bash
 set -euo pipefail
-source firewall.sh
-source fowarding.sh
+./firewall.sh
+./forwarding.sh
 ```
 
 ### Verify iptables Rules

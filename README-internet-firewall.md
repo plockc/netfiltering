@@ -15,7 +15,7 @@ It's expected that rules.v4 has already been created with the contents as descri
 Running this script below will append to the existing rules.v4 file based on the rules described in this file, that file can be moved to `/etc/iptables/` and will be read in if `iptables-persistent` package is installed, and leveraged if ip forwarding is enabled on the host.
 
 ### Enable Forwarding of Packets
-```create-file:forwarding.sh
+```create-file:forwarding.sh:744
 #!/bin/bash
 set -euo pipefail
 sudo sysctl -w net.ipv4.ip_forward=1
