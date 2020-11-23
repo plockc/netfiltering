@@ -40,9 +40,9 @@ General idea is to only allow routing for connections initiated in the protected
 Allow forwarding of any tcp, udp, and icmp traffic outbound.  
 ```r-append-file:rules.v4
 * filter
--A FORWARD -p tcp --destination !%:INTERNAL_NETWORK_ADDRESS:% -j ACCEPT
--A FORWARD -p udp --destination !%:INTERNAL_NETWORK_ADDRESS:% -j ACCEPT
--A FORWARD -p icmp --destination !%:INTERNAL_NETWORK_ADDRESS:% -j ACCEPT
+-A FORWARD -p tcp ! --destination %:INTERNAL_NETWORK_ADDRESS:% -j ACCEPT
+-A FORWARD -p udp ! --destination %:INTERNAL_NETWORK_ADDRESS:% -j ACCEPT
+-A FORWARD -p icmp ! --destination %:INTERNAL_NETWORK_ADDRESS:% -j ACCEPT
 ```
 
 Forward any packets on already established connections, this allows return traffic initiated by internal hosts.  The default policy to DROP will prevent NEW connections from external networks.
