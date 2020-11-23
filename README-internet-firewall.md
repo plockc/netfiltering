@@ -61,7 +61,7 @@ Forward packets for explicitly allowed services, such as `ssh` port and ICMP for
 
 ICMP message for rejected traffic
 ```append-file:rules.v4
-iptables -A FORWARD -j REJECT --reject-with icmp-host-unreachable
+-A FORWARD -j REJECT --reject-with icmp-host-unreachable
 ```
 
 ## Commit

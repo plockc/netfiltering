@@ -49,5 +49,5 @@ COMMIT
 -A FORWARD -p tcp --dport 443 -j ACCEPT
 -A FORWARD -p icmp -m icmp --icmp-type 8 -j ACCEPT
 -A FORWARD -p icmp -m icmp --icmp-type 0 -j ACCEPT
-iptables -A FORWARD -j REJECT --reject-with icmp-host-unreachable
+-A FORWARD -j REJECT --reject-with icmp-host-unreachable
 COMMIT
