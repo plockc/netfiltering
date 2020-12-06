@@ -41,7 +41,7 @@ apt-get -y install iptables-persistent
 
 ### Configure netfilter-persistent
 Install the rules and restart netfilter
-```append-file:persist.sh:744
+```create-file:persist.sh:744
 iptables-save > /etc/iptables/rules.v4
 ip6tables-save > /etc/iptables/rules.v6
 sudo netfilter-persistent reload  # reloads all the rules
