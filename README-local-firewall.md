@@ -128,7 +128,7 @@ iptables -t mangle -P POSTROUTING ACCEPT
 
 Just block all ipv6
 ```append-file:firewall.sh:744
-ip6tables -A INPUT -j REJECT --reject-with icmp-proto-unreachable
-ip6tables -A OUTPUT -j REJECT --reject-with icmp-proto-unreachable
-ip6tables -A FORWARD -j REJECT --reject-with icmp-proto-unreachable
+ip6tables -A INPUT -j REJECT --reject-with adm-prohibited
+ip6tables -A OUTPUT -j REJECT --reject-with adm-prohibited
+ip6tables -A FORWARD -j REJECT --reject-with adm-prohibited
 ```
