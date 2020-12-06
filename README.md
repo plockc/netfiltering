@@ -12,7 +12,8 @@ pip3 install --user rundoc
 
 to create the install script:
 ```
-sudo rundoc run -a README.md
+rundoc run -a README.md
+sudo ./install.sh
 ```
 
 # Installation Script
@@ -28,23 +29,20 @@ rundoc run README-local-firewall.md
 rundoc run README-internet-firewall.md
 ```
 
-### Install firewall and internet firewall
+### Install firewall firewall and persist
 ```create-file:install.sh:744
 #!/bin/bash
 set -euo pipefail
+apt-get -y install iptables-persistent
 ./firewall.sh
 ./forwarding.sh
-```
-
-### Verify iptables Rules
-```append-file:install.sh
-sudo iptables-restore -t rules.v4
-sudo ip6tables-restore -t rules.v6
+./persist.sh
 ```
 
 ### Configure netfilter-persistent
 Install the rules and restart netfilter
-```append-file:install.sh
-sudo cp rules.v{4,6} /etc/iptables/
+```append-file:persist.sh:744
+iptables-save > /etc/iptables/rules.v4
+ip6tables-save > /etc/iptables/rules.v6
 sudo netfilter-persistent reload  # reloads all the rules
 ```

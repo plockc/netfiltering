@@ -1,6 +1,5 @@
 #!/bin/bash
 set -euo pipefail
-apt-get -y install iptables-persistent
 iptables -F # Flush filter table
 iptables -X # Delete all filter chains
 iptables -Z # Flush all counters too

@@ -7,13 +7,10 @@ It is assumed Ubuntu will be used, initially developed on 20.04
 # Installation
 
 Running the command below will create a script that will:
-* install `iptables-persistent` if missing
 * flush iptables
 * add the rules specified in this file
-* then save rules to `/etc/iptables/rules.v{4,6}`
 
-On boot the rules will be processed automatically.
-
+This does not persis the rules
 ```
 rundoc run README-local-firewall.md
 sudo ./firewall.sh
@@ -21,11 +18,10 @@ sudo ./firewall.sh
 
 # Contents of install.sh
 
-### Install Packages and Tools
+### Header
 ```create-file:firewall.sh:744
 #!/bin/bash
 set -euo pipefail
-apt-get -y install iptables-persistent
 ```
 
 # firewall.sh
