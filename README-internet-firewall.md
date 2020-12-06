@@ -36,7 +36,7 @@ CIDR="%:INTERNAL_NETWORK_ADDRESS:%"
 ```
 
 ### Enable Forwarding of Packets
-```create-file:forwarding.sh:744
+```append-file:forwarding.sh:744
 sysctl -w net.ipv4.ip_forward=1
 echo "net.ipv4.ip_forward = 1" | sudo tee /etc/sysctl.d/99-ip-forwarding.conf
 ```
