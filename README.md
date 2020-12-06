@@ -45,6 +45,6 @@ sudo ip6tables-restore -t rules.v6
 ### Configure netfilter-persistent
 Install the rules and restart netfilter
 ```append-file:install.sh
-sudo mv rules.v{4,6} /etc/iptables/
+sudo cp rules.v{4,6} /etc/iptables/
 sudo netfilter-persistent reload  # reloads all the rules
 ```
