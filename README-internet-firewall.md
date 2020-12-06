@@ -29,7 +29,7 @@ INTERNAL_NETWORK_ADDRESS=192.168.0.0/24
 
 ### Header
 
-```create-file:forwarding.sh:744
+```r-create-file:forwarding.sh:744
 #!/bin/bash
 set -euo pipefail
 CIDR="%:INTERNAL_NETWORK_ADDRESS:%"
